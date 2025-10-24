@@ -1,0 +1,56 @@
+{
+  "compilerOptions": {
+    // Objetivo moderno: es lo recomendado para Next.js
+    "target": "ESNext",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    // Para soportar imports ES Modules correctamente
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    // React moderno (no transforma JSX dentro de TS, lo delega a Next)
+    "jsx": "react-jsx",
+    // Alias @/ para imports como "@/lib/idb"
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    },
+    // Compatibilidad y seguridad
+    "strict": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    // Para usar process.env y FastAPI endpoints
+    "types": [
+      "node",
+      "react",
+      "react-dom"
+    ],
+    // TypeScript sin emitir JS (Next.js ya compila)
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next\\dev/types/**/*.ts",
+    ".next\\dev/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
